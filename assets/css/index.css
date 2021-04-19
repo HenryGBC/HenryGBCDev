@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'Orbitron Black';
+  src: url('../fonts/orbitron/Orbitron-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Orbitron Bold';
+  src: url('../fonts/orbitron/Orbitron-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Orbitron Medium';
+  src: url('../fonts/orbitron/Orbitron-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Orbitron Regular';
+  src: url('../fonts/orbitron/Orbitron-Regular.ttf') format('truetype');
+}
+html {
+  font-family: 'Orbitron Regular';
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.header {
+  border-bottom: 1px solid white;
+  padding: 1rem 0;
+}
+.header .header-title {
+  color: white;
+  font-size: 3rem;
+}
+.header .header-description {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.bg-video {
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 740px 1fr;
+  gap: 2rem;
+}
+.layout .webcam-layout {
+  width: 100%;
+  height: 420px;
+  max-width: 740px;
+  position: relative;
+}
+.layout .webcam-layout > img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.layout .webcam-layout .video {
+  position: absolute;
+  left: 35px;
+  top: 24px;
+  width: 91%;
+}
+
+.layout .webcam-layout .social-bar {
+  background: url('../images/bar-large.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 64px;
+  font-size: 0.85rem;
+  width: 90%;
+  height: 109px;
+  position: absolute;
+  bottom: -91px;
+  z-index: -1;
+  left: 40px;
+}
+.layout .webcam-layout .social-bar a {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.layout .webcam-layout .social-bar img {
+  width: 43px;
+}
