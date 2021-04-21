@@ -20,9 +20,10 @@
       <div class="layout">
         <div class="webcam-layout">
           <img src="assets/images/webcam-layout.png" alt="" />
-          <video autoplay muted loop class="video">
+          <div id="twitch-embed" class="twitch"></div>
+          <!-- <video autoplay muted loop class="video">
             <source src="assets/video/me.mp4" type="video/mp4" />
-          </video>
+          </video> -->
           <div class="social-bar">
             <a
               class="social"
@@ -30,7 +31,7 @@
               href="https://www.twitch.tv/henrygbc"
             >
               <img src="assets/images/twitch.png" alt="" />
-              /HenryGBC
+              <span> /HenryGBC</span>
             </a>
 
             <a
@@ -39,7 +40,7 @@
               href="https://twitter.com/HenryGBC"
             >
               <img src="assets/images/twitter.png" alt="" />
-              @HenryGBC
+              <span> @HenryGBC</span>
             </a>
             <a
               class="social"
@@ -47,7 +48,7 @@
               href="https://www.instagram.com/henrygbcdev/"
             >
               <img src="assets/images/instagram.png" alt="" />
-              /HenryGBCDev
+              <span>/HenryGBCDev</span>
             </a>
 
             <a
@@ -56,7 +57,7 @@
               href="https://www.youtube.com/channel/UCQZ9xuu8aA7HdsvJXrAPrlg"
             >
               <img src="assets/images/youtube.png" alt="" />
-              Fullstapps
+              <span> Fullstapps</span>
             </a>
           </div>
         </div>
@@ -65,5 +66,19 @@
     <video autoplay muted loop class="bg-video">
       <source src="assets/video/video-bg.mp4" type="video/mp4" />
     </video>
+
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <script type="text/javascript">
+      new Twitch.Embed('twitch-embed', {
+        width: '100%',
+        height: '100%',
+        channel: 'henrygbc',
+        allowfullscreen: true,
+        layout: 'video',
+        // only needed if your site is also embedded on embed.example.com and othersite.example.com
+        // parent: ["embed.example.com", "othersite.example.com"]
+      });
+    </script>
   </body>
 </html>

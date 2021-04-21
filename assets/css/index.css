@@ -40,7 +40,7 @@ body {
 .container {
   position: relative;
   z-index: 1;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
@@ -70,26 +70,30 @@ body {
 }
 .layout {
   display: grid;
-  grid-template-columns: 740px 1fr;
+  grid-template-columns: minmax(auto, 740px) 1fr;
+  grid-template-rows: 460px;
   gap: 2rem;
 }
 .layout .webcam-layout {
   width: 100%;
-  height: 420px;
+  height: auto;
+  max-height: 420px;
+  min-height: 338px;
   max-width: 740px;
   position: relative;
+  z-index: 1;
 }
 .layout .webcam-layout > img {
   position: absolute;
   width: 100%;
+  height: 100%;
   left: 0;
   top: 0;
+  z-index: -1;
 }
-.layout .webcam-layout .video {
-  position: absolute;
-  left: 35px;
-  top: 24px;
-  width: 91%;
+.layout .webcam-layout .twitch {
+  height: 100%;
+  padding: 1.5rem;
 }
 
 .layout .webcam-layout .social-bar {
@@ -115,4 +119,21 @@ body {
 }
 .layout .webcam-layout .social-bar img {
   width: 43px;
+}
+@media only screen and (max-width: 1040px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 460px 1fr;
+  }
+  .layout .webcam-layout .social-bar {
+    left: 17px;
+    place-items: center;
+  }
+  .layout .webcam-layout .social-bar a span {
+    display: none;
+  }
+  .layout .webcam-layout .social-bar img {
+    width: 28px;
+  }
 }
